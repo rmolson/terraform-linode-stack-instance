@@ -1,9 +1,15 @@
-variable authorized_keys {
+variable "authorized_keys" {
   type        = list(string)
   description = "SSH public keys to use on the instance"
 }
 
-variable domainId {
+variable "build_dns" {
+  type        = bool
+  description = "Add a DNS entry?"
+  default     = true
+}
+
+variable "domainId" {
   type        = string
   description = "domain id for the lenode dns zone"
   default     = null
@@ -21,7 +27,7 @@ variable "instance_type" {
   default     = "g6-nanode-1"
 }
 
-variable name {
+variable "name" {
   type        = string
   description = "Name of the instance"
 }
